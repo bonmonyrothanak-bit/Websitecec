@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ព័ត៌មានលម្អិតផ្សេងៗ | KH0015</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --red: #c91f32;
+    --red-dark: #821526;
+    --gold: #d6a943;
+    --gold-light: #ffe3a0;
+    --white: #ffffff;
+    --bg: #f5f6f8;
+    --dark: #171b27;
+    --muted: #687386;
+    --line: #e8eaf0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Kantumruy Pro', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+/* HEADER */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(17,20,30,.97);
+    backdrop-filter: blur(15px);
+    border-bottom: 2px solid var(--gold);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 13px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.brand-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    background: linear-gradient(145deg,#ffdf91,#c18a27,#80520c);
+    box-shadow:
+        0 5px 0 #69420c,
+        0 9px 18px rgba(0,0,0,.35),
+        inset 0 2px 5px rgba(255,255,255,.6);
+    text-shadow: 0 2px 3px #75500f;
+}
+
+.brand-name {
+    color: var(--gold-light);
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.brand-sub {
+    color: #d0d3dc;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.header-status {
+    color: #e8c66e;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #35d99a;
+    box-shadow: 0 0 10px #35d99a;
+}
+
+/* NAVIGATION */
+
+.nav-wrap {
+    background: #202331;
+    border-bottom: 1px solid rgba(214,169,67,.35);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 9px 18px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.nav button {
+    flex-shrink: 0;
+    color: #e3e5eb;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    padding: 9px 15px;
+    font-size: 13px;
+    transition: .25s;
+}
+
+.nav button:hover,
+.nav button.active {
+    background: linear-gradient(135deg,#a91c30,#d83c4b);
+    color: white;
+    border-color: #e6b85a;
+    box-shadow: 0 4px 13px rgba(201,31,50,.25);
+}
+
+/* MAIN */
+
+.container {
+    width: min(1180px,94%);
+    margin: 28px auto 55px;
+}
+
+section {
+    scroll-margin-top: 130px;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 45px;
+    border-radius: 25px;
+    border: 1px solid #e3c9c9;
+    background:
+        radial-gradient(circle at 85% 40%,rgba(201,31,50,.10),transparent 38%),
+        linear-gradient(120deg,#ffffff 0%,#fffafa 60%,#f9e9e9 100%);
+    box-shadow: 0 15px 45px rgba(90,20,30,.10);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    right: -90px;
+    top: -100px;
+    border-radius: 50%;
+    border: 35px solid rgba(201,31,50,.06);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    max-width: 680px;
+}
+
+.eyebrow {
+    color: var(--red);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.hero h1 {
+    font-size: clamp(27px,4.2vw,43px);
+    line-height: 1.35;
+    margin: 16px 0;
+    color: #24212a;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--red);
+}
+
+.hero p {
+    font-size: 14px;
+    line-height: 2;
+    color: #596170;
+    max-width: 640px;
+}
+
+.hero-line {
+    width: 85px;
+    height: 5px;
+    margin-top: 23px;
+    border-radius: 10px;
+    background: linear-gradient(90deg,var(--red),var(--gold));
+}
+
+/* CHURCH LOGO BOX */
+
+.hero-church-logo {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    width: 235px;
+    height: 235px;
+    padding: 12px;
+    border-radius: 26px;
+    background: #fcfaf7;
+    border: 2px solid #ecd5a2;
+    box-shadow:
+        0 14px 32px rgba(130, 21, 38, 0.14),
+        inset 0 2px 6px rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.hero-church-logo:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 18px 38px rgba(130, 21, 38, 0.2),
+        inset 0 2px 6px rgba(255, 255, 255, 0.9);
+}
+
+.hero-church-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 14px;
+}
+
+/* QUICK CARDS */
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    margin: 23px 0 40px;
+}
+
+.quick-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 19px;
+    border-radius: 15px;
+    background: white;
+    border: 1px solid var(--line);
+    box-shadow: 0 5px 20px rgba(0,0,0,.04);
+    cursor: pointer;
+    transition: .25s;
+}
+
+.quick-card:hover {
+    transform: translateY(-5px);
+    border-color: #d9a94b;
+    box-shadow: 0 12px 25px rgba(120,30,40,.09);
+}
+
+.quick-icon {
+    width: 47px;
+    height: 47px;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    background: #fff0f0;
+    color: var(--red);
+    font-size: 23px;
+}
+
+.quick-card strong {
+    display: block;
+    font-size: 14px;
+}
+
+.quick-card small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* SECTION */
+
+.section {
+    margin-top: 42px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 19px;
+}
+
+.section-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 22px;
+    background: linear-gradient(145deg,#df4754,#a91c30);
+    box-shadow: 0 4px 10px rgba(169,28,48,.2);
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #292b35;
+}
+
+.section-heading p {
+    margin: 3px 0 0;
+    color: #9299a6;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.panel {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 19px;
+    padding: 22px;
+    box-shadow: 0 8px 28px rgba(0,0,0,.045);
+}
+
+.subheading {
+    color: var(--red);
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0 0 17px;
+}
+
+/* GALLERY */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    gap: 13px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 175px;
+    display: block;
+    object-fit: cover;
+    border-radius: 13px;
+    border: 1px solid #eee;
+    background: #f2f2f2;
+    cursor: zoom-in;
+    transition: .25s;
+}
+
+.gallery-grid img:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 22px rgba(0,0,0,.12);
+}
+
+/* COMPUTER IMAGE GALLERY */
+
+.computer-gallery {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 17px;
+}
+
+.computer-image-card {
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid #e9e9e9;
+    background: #fff;
+    transition: .25s;
+}
+
+.computer-image-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+.computer-image-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    cursor: zoom-in;
+    background: #f1f1f1;
+}
+
+.image-caption {
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    color: #3d414b;
+}
+
+/* INTERNET */
+
+.info-block {
+    margin-top: 20px;
+}
+
+.info-block h3 {
+    color: var(--red);
+    font-size: 14px;
+    margin: 0 0 9px;
+}
+
+.info-block ul {
+    padding-left: 22px;
+    margin: 0;
+    color: #555e6c;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.info-block li {
+    margin-bottom: 5px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    min-width: 570px;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+th {
+    background: #a91c30;
+    color: white;
+    text-align: left;
+    padding: 14px;
+}
+
+td {
+    padding: 13px;
+    border-top: 1px solid var(--line);
+    color: #555e6c;
+}
+
+td:nth-child(2) {
+    color: var(--red);
+    font-weight: 800;
+}
+
+.official-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 14px;
+    margin-top: 16px;
+    border-radius: 11px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    background: linear-gradient(100deg,#a91c30,#d34a51);
+    transition: .2s;
+}
+
+.official-link:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* TV */
+
+.tv-photo {
+    width: 100%;
+    max-height: 380px;
+    object-fit: contain;
+    background: #f6f6f6;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    cursor: zoom-in;
+    margin-bottom: 15px;
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0,0,0,.94);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 22px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(255,255,255,.3);
+    background: rgba(255,255,255,.12);
+    color: white;
+    border-radius: 50%;
+    font-size: 27px;
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    padding: 30px 15px;
+    background: #171b27;
+    border-top: 3px solid var(--gold);
+    color: #c3c6d0;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.footer strong {
+    color: var(--gold-light);
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 26px;
+    }
+
+    .hero-church-logo {
+        width: 190px;
+        height: 190px;
+        align-self: center;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .computer-gallery {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:560px) {
+    .header-inner {
+        padding: 10px 13px;
+    }
+
+    .brand-name {
+        font-size: 13px;
+    }
+
+    .brand-sub {
+        font-size: 8px;
+    }
+
+    .header-status {
+        font-size: 9px;
+    }
+
+    .brand-icon {
+        width: 39px;
+        height: 39px;
+    }
+
+    .container {
+        margin-top: 17px;
+    }
+
+    .hero {
+        padding: 25px 19px;
+        gap: 22px;
+    }
+
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .hero-church-logo {
+        width: 175px;
+        height: 175px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2,1fr);
+        gap: 9px;
+    }
+
+    .gallery-grid img {
+        height: 135px;
+    }
+
+    .computer-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .computer-image-card img {
+        height: 230px;
+    }
+
+    .section-heading h2 {
+        font-size: 17px;
+    }
+
+    .panel {
+        padding: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-inner">
+
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+            <div>
+                <div class="brand-name">ព័ត៌មានលម្អិតផ្សេងៗ</div>
+                <div class="brand-sub">INFORMATION CENTER</div>
+            </div>
+        </div>
+
+        <div class="header-status">
+            <span class="status-dot"></span>
+            INFORMATION HUB
+        </div>
+
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<div class="nav-wrap">
+    <nav class="nav">
+        <button class="active" data-target="home">⌂ ទំព័រដើម</button>
+        <button data-target="gallery">▦ រូបភាពសកម្មភាព</button>
+        <button data-target="computer">💻 កុំព្យូទ័រ</button>
+        <button data-target="internet">◉ Internet & Wi-Fi</button>
+        <button data-target="tv">▣ TV</button>
+    </nav>
+</div>
+
+<main class="container">
+
+<!-- HOME -->
+<section id="home">
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                ✦ DIGITAL INFORMATION PLATFORM
+            </div>
+
+            <h1>
+                WELCOME TO
+                <span>ក្រុមជំនុំផ្សព្វផ្សាយដំណឹងល្អកម្ពុជា</span>
+            </h1>
+
+            <p>
+                សូមស្វាគមន៍មកកាន់ប្រព័ន្ធព័ត៌មានលម្អិត
+                ដែលប្រមូលផ្ដុំព័ត៌មាន រូបភាពសកម្មភាព
+                កុំព្យូទ័រ និងឧបករណ៍បច្ចេកវិទ្យាផ្សេងៗ
+                ទុកនៅក្នុងកន្លែងតែមួយ ដើម្បីងាយស្រួលសិក្សា
+                ស្វែងយល់ និងប្រើប្រាស់។
+            </p>
+
+            <div class="hero-line"></div>
+
+        </div>
+
+        <!-- CHURCH LOGO -->
+        <div class="hero-church-logo">
+            <img src="https://raw.githubusercontent.com/bonmonyrothanak-bit/Audio1/main/6077944599126153026_120.jpg" alt="ក្រុមជំនុំផ្សព្វផ្សាយដំណឹងល្អកម្ពុជា - Cambodia Evangelical Church">
+        </div>
+
+    </div>
+
+    <div class="quick-grid">
+
+        <div class="quick-card" data-jump="gallery">
+            <div class="quick-icon">▦</div>
+            <div>
+                <strong>រូបភាពសកម្មភាព</strong>
+                <small>Research Activity Gallery</small>
+            </div>
+        </div>
+
+        <div class="quick-card" data-jump="computer">
+            <div class="quick-icon">💻</div>
+            <div>
+                <strong>ព័ត៌មានកុំព្យូទ័រ</strong>
+                <small>Computer Information</small>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+
+    <div class="section-heading">
+        <div class="section-icon">▦</div>
+        <div>
+            <h2>រូបភាពសកម្មភាពសិក្សាស្រាវជ្រាវ</h2>
+            <p>RESEARCH ACTIVITY GALLERY</p>
+        </div>
+    </div>
+
+    <div class="panel">
+
+        <div class="gallery-grid">
+            <img src="https://iili.io/np1rISI.jpg" alt="រូបទី១" loading="lazy">
+            <img src="https://iili.io/np1rAAX.jpg" alt="រូបទី២" loading="lazy">
+            <img src="https://iili.io/np1rzcN.jpg" alt="រូបទី៣" loading="lazy">
+            <img src="https://iili.io/np1ru9t.jpg" alt="រូបទី៤" loading="lazy">
+            <img src="https://iili.io/np1r5ts.jpg" alt="រូបទី៥" loading="lazy">
+            <img src="https://iili.io/np1rYoG.jpg" alt="រូបទី៦" loading="lazy">
+            <img src="https://iili.io/np1mLq7.jpg" alt="រូបទី៧" loading="lazy">
+            <img src="https://iili.io/np1mQ19.jpg" alt="រូបទី៨" loading="lazy">
+            <img src="https://iili.io/np1mZge.jpg" alt="រូបទី៩" loading="lazy">
+            <img src="https://iili.io/np1mDdu.jpg" alt="រូបទី១០" loading="lazy">
+            <img src="https://iili.io/np1mpmx.jpg" alt="រូបទី១១" loading="lazy">
+            <img src="https://iili.io/np1p9zQ.jpg" alt="រូបទី១២" loading="lazy">
+            <img src="https://iili.io/np1pJLB.jpg" alt="រូបទី១៣" loading="lazy">
+            <img src="https://iili.io/np1p2qP.jpg" alt="រូបទី១៤" loading="lazy">
+            <img src="https://iili.io/np1p311.jpg" alt="រូបទី១៥" loading="lazy">
+            <img src="https://iili.io/np1pFrF.jpg" alt="រូបទី១៦" loading="lazy">
+            <img src="https://iili.io/np1pq7a.jpg" alt="រូបទី១៧" loading="lazy">
+            <img src="https://iili.io/np1pBkJ.jpg" alt="រូបទី១៨" loading="lazy">
+            <img src="https://iili.io/np1pCmv.jpg" alt="រូបទី១៩" loading="lazy">
+            <img src="https://iili.io/np1pxXp.jpg" alt="រូបទី២០" loading="lazy">
+            <img src="https://iili.io/np1pzLN.jpg" alt="រូបទី២១" loading="lazy">
+            <img src="https://iili.io/np1pTBI.jpg" alt="រូបទី២២" loading="lazy">
+            <img src="https://iili.io/np1pu1t.jpg" alt="រូបទី២៣" loading="lazy">
+            <img src="https://iili.io/np1pArX.jpg" alt="រូបទី២៤" loading="lazy">
+            <img src="https://iili.io/np1p52n.jpg" alt="រូបទី២៥" loading="lazy">
+        </div>
+
+    </div>
+</section>
+
+<!-- COMPUTER -->
+<section class="section" id="computer">
+
+    <div class="section-heading">
+        <div class="section-icon">💻</div>
+        <div>
+            <h2>ព័ត៌មានលម្អិតកុំព្យូទ័រ</h2>
+            <p>COMPUTER INFORMATION GALLERY</p>
+        </div>
+    </div>
+
+    <div class="panel">
+
+        <h3 class="subheading">
+            💻 COMPUTER PHOTO COLLECTION
+        </h3>
+
+        <p style="font-size:13px;color:#747b89;line-height:1.9;margin-bottom:20px;">
+            រូបភាពព័ត៌មានលម្អិតអំពីកុំព្យូទ័រ
+            និងឧបករណ៍ផ្សេងៗ។ អ្នកអាចចុចលើរូបភាព
+            ដើម្បីពង្រីកមើលបាន។
+        </p>
+
+        <div class="computer-gallery">
+
+            <div class="computer-image-card">
+                <img src="https://raw.githubusercontent.com/bonmonyrothanak-bit/Audio/main/6321181460525683883_121.jpeg"
+                     alt="ព័ត៌មានកុំព្យូទ័រទី១" loading="lazy">
+                <div class="image-caption">COMPUTER IMAGE 01</div>
+            </div>
+
+            <div class="computer-image-card">
+                <img src="https://raw.githubusercontent.com/bonmonyrothanak-bit/Audio/main/6321181460525683884_121.jpeg"
+                     alt="ព័ត៌មានកុំព្យូទ័រទី២" loading="lazy">
+                <div class="image-caption">COMPUTER IMAGE 02</div>
+            </div>
+
+            <div class="computer-image-card">
+                <img src="https://raw.githubusercontent.com/bonmonyrothanak-bit/Audio/main/6321181460525683885_121.jpeg"
+                     alt="ព័ត៌មានកុំព្យូទ័រទី៣" loading="lazy">
+                <div class="image-caption">COMPUTER IMAGE 03</div>
+            </div>
+
+            <div class="computer-image-card">
+                <img src="https://raw.githubusercontent.com/bonmonyrothanak-bit/Audio/main/6321181460525683886_121.jpeg"
+                     alt="ព័ត៌មានកុំព្យូទ័រទី៤" loading="lazy">
+                <div class="image-caption">COMPUTER IMAGE 04</div>
+            </div>
+
+            <div class="computer-image-card">
+                <img src="https://raw.githubusercontent.com/bonmonyrothanak-bit/Audio/main/6321181460525683889_121.jpeg"
+                     alt="ព័ត៌មានកុំព្យូទ័រទី៥" loading="lazy">
+                <div class="image-caption">COMPUTER IMAGE 05</div>
+            </div>
+
+            <div class="computer-image-card">
+                <img src="https://raw.githubusercontent.com/bonmonyrothanak-bit/Audio/main/6321181460525683890_121.jpeg"
+                     alt="ព័ត៌មានកុំព្យូទ័រទី៦" loading="lazy">
+                <div class="image-caption">COMPUTER IMAGE 06</div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- INTERNET -->
+<section class="section" id="internet">
+
+    <div class="section-heading">
+        <div class="section-icon">📡</div>
+        <div>
+            <h2>Internet & Wi-Fi</h2>
+            <p>INTERNET SERVICE INFORMATION</p>
+        </div>
+    </div>
+
+    <div class="panel">
+
+        <h3 class="subheading">
+            កញ្ចប់សេវាអ៊ីនធឺណិតប្រចាំខែ
+        </h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>កញ្ចប់</th>
+                        <th>តម្លៃ/ខែ</th>
+                        <th>សមត្ថភាព</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Home Everyday</td>
+                        <td>$16</td>
+                        <td>100 Mbps (Global Speed 20 Mbps)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Home Enjoy</td>
+                        <td>$19</td>
+                        <td>150 Mbps (Global Speed 30 Mbps)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Home Family</td>
+                        <td>$21</td>
+                        <td>250 Mbps (Global Speed 35 Mbps)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Home Max</td>
+                        <td>$35</td>
+                        <td>350 Mbps (Global Speed 80 Mbps)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <a class="official-link"
+           href="https://mekongnet.com.kh/services/home"
+           target="_blank" rel="noopener noreferrer">
+            🌐 ចូលទៅកាន់វេបសាយផ្លូវការ MekongNet ↗
+        </a>
+
+    </div>
+
+    <div class="panel" style="margin-top:15px;">
+
+        <h3 class="subheading">
+            📋 អត្ថប្រយោជន៍សម្រាប់សិស្ស
+        </h3>
+
+        <div class="info-block">
+            <ul>
+                <li>រៀន Online តាម YouTube, Google Classroom និង Zoom។</li>
+                <li>ស្រាវជ្រាវឯកសារ និងទាញយកឯកសារសិក្សា។</li>
+                <li>ភ្ជាប់ឧបករណ៍ច្រើន ដូចជាទូរស័ព្ទ កុំព្យូទ័រ និង Tablet។</li>
+                <li>ជួយឱ្យសិស្សទទួលបានឱកាសសិក្សាតាមអ៊ីនធឺណិត។</li>
+                <li>អាចសិក្សាពីបច្ចេកវិទ្យាថ្មីៗ និងជំនាញឌីជីថល។</li>
+            </ul>
+        </div>
+
+        <div class="info-block">
+            <h3>ទំនាក់ទំនង MekongNet</h3>
+            <ul>
+                <li><strong>Call Center:</strong> 015 234 501 ឬ 023 226 622</li>
+                <li><strong>Email:</strong> sales@corp.mekongnet.com.kh</li>
+                <li><strong>ម៉ោងធ្វើការ:</strong> ចន្ទ–សុក្រ 8:00 AM–5:00 PM</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TV -->
+<section class="section" id="tv">
+
+    <div class="section-heading">
+        <div class="section-icon">▣</div>
+        <div>
+            <h2>TV — ទូរទស្សន៍</h2>
+            <p>TELEVISION INFORMATION</p>
+        </div>
+    </div>
+
+    <div class="panel">
+
+        <img class="tv-photo"
+             src="https://raw.githubusercontent.com/bonmonyrothanak-bit/Audio1/main/orrrrrrrrrrrrrr_2026-11-12_14-49-05.jpg"
+             alt="ទូរទស្សន៍ Sony BRAVIA 4K HDR"
+             loading="lazy">
+
+        <a class="official-link"
+           href="https://electronics.sony.com/tv-video/televisions/all-tvs/p/k43s30"
+           target="_blank" rel="noopener noreferrer">
+            🌐 ចូលទៅកាន់វេបសាយផ្លូវការ Sony TV ↗
+        </a>
+
+    </div>
+
+    <div class="panel" style="margin-top:15px;">
+
+        <h3 class="subheading">
+            📋 ព័ត៌មានលម្អិតអំពីទូរទស្សន៍ 4K HDR
+        </h3>
+
+        <div class="info-block">
+            <ul>
+                <li><strong>Processor X1™:</strong> ជួយបង្កើនគុណភាពរូបភាព ពណ៌ និងភាពច្បាស់លាស់។</li>
+                <li><strong>Triluminos Pro™:</strong> បង្ហាញពណ៌បានច្រើន និងរស់រវើក។</li>
+                <li><strong>Google TV™:</strong> ចូលប្រើកម្មវិធី Streaming និង Google Assistant។</li>
+                <li>គាំទ្រ Netflix, Prime Video, Disney+, YouTube និងកម្មវិធីផ្សេងៗ។</li>
+                <li>គាំទ្រ AirPlay 2 និង Chromecast built-in។</li>
+                <li><strong>4K HDR:</strong> ផ្ដល់រូបភាពច្បាស់ និងពណ៌ស្រស់ស្អាត។</li>
+                <li><strong>Dolby Vision:</strong> ជួយបង្កើនបទពិសោធន៍មើលភាពយន្ត។</li>
+                <li><strong>Motionflow XR:</strong> ជួយឱ្យចលនារូបភាពរលូន។</li>
+                <li><strong>Dolby Atmos:</strong> គាំទ្របទពិសោធន៍សំឡេង។</li>
+                <li><strong>Game Menu:</strong> ប្រមូលការកំណត់សម្រាប់ការលេងហ្គេម។</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+    <strong>ព័ត៌មានលម្អិតផ្សេងៗ</strong><br>
+    ក្រុមជំនុំផ្សព្វផ្សាយដំណឹងល្អកម្ពុជា (KH0015)<br>
+    INFORMATION CENTER · LEARN · EXPLORE · TECHNOLOGY
+</footer>
+
+<!-- IMAGE VIEWER -->
+
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="closeLightbox">×</button>
+    <img id="lightboxImage" src="" alt="រូបភាពពង្រីក">
+</div>
+
+<script>
+
+/* NAVIGATION */
+
+const navButtons = document.querySelectorAll(".nav button");
+
+function goToSection(id) {
+    const target = document.getElementById(id);
+
+    if (!target) return;
+
+    target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    navButtons.forEach(button => {
+        button.classList.toggle(
+            "active",
+            button.dataset.target === id
+        );
+    });
+}
+
+navButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        goToSection(button.dataset.target);
+    });
+});
+
+/* QUICK CARDS */
+
+document.querySelectorAll("[data-jump]").forEach(card => {
+    card.addEventListener("click", () => {
+        goToSection(card.dataset.jump);
+    });
+});
+
+/* ACTIVE NAVIGATION WHILE SCROLLING */
+
+const sections = document.querySelectorAll("main section[id]");
+
+window.addEventListener("scroll", () => {
+
+    let current = "home";
+
+    sections.forEach(section => {
+        if (window.scrollY >= section.offsetTop - 170) {
+            current = section.id;
+        }
+    });
+
+    navButtons.forEach(button => {
+        button.classList.toggle(
+            "active",
+            button.dataset.target === current
+        );
+    });
+
+});
+
+/* IMAGE LIGHTBOX */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+
+document.querySelectorAll(
+    ".gallery-grid img, .computer-gallery img, .tv-photo"
+).forEach(img => {
+
+    img.addEventListener("click", () => {
+        lightboxImage.src = img.src;
+        lightbox.classList.add("open");
+    });
+
+});
+
+function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightboxImage.src = "";
+}
+
+document.getElementById("closeLightbox")
+    .addEventListener("click", closeLightbox);
+
+lightbox.addEventListener("click", event => {
+    if (event.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        closeLightbox();
+    }
+});
+
+</script>
+
+</body>
+</html>
